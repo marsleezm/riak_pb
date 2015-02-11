@@ -5,7 +5,7 @@ option java_outer_classname = "ClocksiPB";
 
 // Start Tx request
 message FpbStartTxReq {
-    optional bytes time = 1 [default = 0];
+    optional bytes time = 1 [default = "0"];
 }
 
 // Start Tx response

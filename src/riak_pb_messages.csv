@@ -48,6 +48,14 @@
 81,DtFetchResp,riak_dt
 82,DtUpdateReq,riak_dt
 83,DtUpdateResp,riak_dt
+94,FpbStartTxReq,clocksi
+95,FpbStartTxResp,clocksi
+96,FpbUpdateReq,clocksi
+97,FpbUpdateResp,clocksi
+98,FpbReadReq,clocksi
+99,FpbReadResp,clocksi
+100,FpbCommitTxnReq,clocksi
+101,FpbCommitTxnResp,clocksi
 253,RpbAuthReq,riak
 254,RpbAuthResp,riak
 255,RpbStartTls,riak

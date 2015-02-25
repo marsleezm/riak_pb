@@ -2,10 +2,6 @@
 option java_package = "clocksi.application.ycsb";
 option java_outer_classname = "ClocksiPB";
 
-message TxId {
-    required int32 uuid = 1;
-    required bytes pid = 2;
-}
 
 // Start Tx request
 message FpbStartTxReq {
@@ -49,4 +45,9 @@ message FpbCommitTxReq {
 // Commit Tx response
 message FpbCommitTxResp {
     required bytes result = 1;
+}
+
+message TxId {
+    required int32 uuid = 1;
+    required bytes pid = 2;
 }

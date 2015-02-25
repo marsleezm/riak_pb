@@ -10,13 +10,13 @@ message FpbStartTxReq {
 
 // Start Tx response
 message FpbStartTxResp {
-    required int32 txid = 1;
+    required string txid = 1;
 }
 
 
 // Update request
 message FpbUpdateReq {
-    required TxId txid  = 1;
+    required string txid  = 1;
     required bytes key = 2;
     required bytes value = 3;
 }
@@ -28,7 +28,7 @@ message FpbUpdateResp {
 
 // Read request
 message FpbReadReq {
-    required TxId txid = 1;
+    required string txid = 1;
     required bytes key = 2;
 }
 
@@ -39,7 +39,7 @@ message FpbReadResp {
 
 // Commit Tx request
 message FpbCommitTxReq {
-    required TxId txid = 1;
+    required string txid = 1;
 }
 
 // Commit Tx response
@@ -47,7 +47,7 @@ message FpbCommitTxResp {
     required bytes result = 1;
 }
 
-message TxId {
-    required int32 uuid = 1;
-    required bytes pid = 2;
-}
+//message TxId {
+//    required int32 uuid = 1;
+//    required bytes pid = 2;
+//}

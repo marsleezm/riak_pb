@@ -10,7 +10,7 @@ message FpbStartTxReq {
 
 // Start Tx response
 message FpbStartTxResp {
-    required TxId txid = 1;
+    required int32 txid = 1;
 }
 
 

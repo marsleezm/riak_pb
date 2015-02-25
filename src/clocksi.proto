@@ -2,6 +2,10 @@
 option java_package = "com.basho.riak.protobuf";
 option java_outer_classname = "ClocksiPB";
 
+message TxId {
+    required int32 uuid = 1;
+    required bytes pid = 2;
+}
 
 // Start Tx request
 message FpbStartTxReq {
@@ -10,12 +14,13 @@ message FpbStartTxReq {
 
 // Start Tx response
 message FpbStartTxResp {
-    required bytes txid = 1;
+    required TxId txid = 1;
 }
+
 
 // Update request
 message FpbUpdateReq {
-    required bytes id  = 1;
+    required TxId txid  = 1;
     required bytes key = 2;
     required bytes value = 3;
 }
@@ -27,7 +32,7 @@ message FpbUpdateResp {
 
 // Read request
 message FpbReadReq {
-    required bytes id = 1;
+    required TxId txid = 1;
     required bytes key = 2;
 }
 
@@ -38,7 +43,7 @@ message FpbReadResp {
 
 // Commit Tx request
 message FpbCommitTxReq {
-    required bytes id = 1;
+    required TxId txid = 1;
 }
 
 // Commit Tx response

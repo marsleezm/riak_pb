@@ -1,5 +1,5 @@
 // Java package specifiers
-option java_package = "com.basho.riak.protobuf";
+option java_package = "clocksi.application.ycsb";
 option java_outer_classname = "ClocksiPB";
 
 message TxId {

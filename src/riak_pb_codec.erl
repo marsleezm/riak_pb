@@ -47,23 +47,30 @@
          decode_commit_hooks/1
         ]).
 
-%% @doc Bucket properties that store module/function pairs, e.g.
+%% @type modfun_property().
+%%
+%% Bucket properties that store module/function pairs, e.g.
 %% commit hooks, hash functions, link functions, will be in one of
 %% these forms. More specifically:
 %%
+%% ```
 %% chash_keyfun :: {module(), function()}
 %% linkfun :: {modfun, module(), function()}
-%% precommit, postcommit :: [ {struct, [{binary(), binary()}]} ]
+%% precommit, postcommit :: [ {struct, [{binary(), binary()}]} ]'''
 %% @end
 -type modfun_property() :: {module(), function()} | {modfun, module(), function()} | {struct, [{binary(), binary()}]}.
 
-%% @doc Fields that can be specified in a commit hook must be
-%% binaries. The valid values are <<"mod">>, <<"fun">>, <<"name">>.
+%% @type commit_hook_field().
+%%
+%% Fields that can be specified in a commit hook must be
+%% binaries. The valid values are `<<"mod">>, <<"fun">>, <<"name">>'.
 %% Note that "mod" and "fun" must be used together, and "name" cannot
 %% be used if the other two are present.
 -type commit_hook_field() :: binary().
 
-%% @doc Bucket properties that are commit hooks have this format.
+%% @type commit_hook_property().
+%%
+%% Bucket properties that are commit hooks have this format.
 -type commit_hook_property() :: [ {struct, [{commit_hook_field(), binary()}]} ].
 
 %% @doc Create an iolist of msg code and protocol buffer
@@ -93,7 +100,7 @@ msg_type(Int) -> riak_pb_messages:msg_type(Int).
 %% @doc Converts a symbolic message name into a message code. Replaces
 %% `riakc_pb:msg_code/1'.
 -spec msg_code(atom()) -> integer().
-msg_code(Atom) -> riak_pb_messages:msg_code(Atom).    
+msg_code(Atom) -> riak_pb_messages:msg_code(Atom).
 
 %% @doc Selects the appropriate PB decoder for a message code.
 -spec decoder_for(pos_integer()) -> module().

@@ -23,7 +23,7 @@ message FpbUpdateReq {
 
 // Update response
 message FpbUpdateResp {
-    required string result = 1;
+    required bytes result = 1;
 }
 
 // Read request
@@ -44,7 +44,7 @@ message FpbCommitTxReq {
 
 // Commit Tx response
 message FpbCommitTxResp {
-    required string result = 1;
+    required bytes result = 1;
 }
 
 //message TxId {

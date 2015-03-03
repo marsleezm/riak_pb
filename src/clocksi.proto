@@ -40,7 +40,6 @@ message FpbReadResp {
 // Commit Tx request
 message FpbCommitTxReq {
     required TxId txid = 1;
-    required int32 tag = 2;
 }
 
 // Commit Tx response

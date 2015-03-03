@@ -58,6 +58,7 @@
 99,FpbReadResp,clocksi
 100,FpbCommitTxnReq,clocksi
 101,FpbCommitTxnResp,clocksi
+102,TxId,clocksi
 253,RpbAuthReq,riak
 254,RpbAuthResp,riak
 255,RpbStartTls,riak

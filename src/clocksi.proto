@@ -45,6 +45,7 @@ message FpbCommitTxReq {
 // Commit Tx response
 message FpbCommitTxResp {
     required bytes result = 1;
+    required int32 tag = 2;
 }
 
 message TxId {

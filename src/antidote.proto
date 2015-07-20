@@ -56,6 +56,7 @@ message FpbAtomicUpdateTxnOp {
 	optional FpbSetUpdateReq setupdate = 3;
 }
 
+
 //Atomic update transaction
 //@todo: Encode clock
 message FpbAtomicUpdateTxnReq {
@@ -68,6 +69,24 @@ message FpbAtomicUpdateTxnResp {
 	required bool success = 1; 
 	//If transaction failed clock will be empty
 	optional bytes clock = 2;
+}
+
+//Operation possible inside atomic update transaction
+message FpbGeneralTxnOp {
+	optional FpbIncrementReq counterinc = 1;
+	optional FpbDecrementReq counterdec = 2;	
+	optional FpbSetUpdateReq setupdate = 3;
+	optional FpbGetCounterReq counter = 4;
+	optional FpbGetSetReq set = 5;	
+}
+
+message FpbGeneralTxnList {
+    repeated FpbGeneralTxnOp op = 1;
+}
+
+message FpbGeneralTxnReq {
+	optional bytes clock = 1;
+	repeated FpbGeneralTxnList ops = 2;
 }
 
 //Operation possible inside atomic update transaction

@@ -19,7 +19,7 @@ message FpbTxnReq {
 message FpbTxnResp {
 	required bool success = 1;
 	optional bytes clock = 2;
-	repeated FpbRespValue results = 3;
+	repeated FpbValue results = 3;
 }
 
 //Response for a transaction

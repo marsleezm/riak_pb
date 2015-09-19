@@ -2,82 +2,22 @@
 option java_package = "com.basho.riak.protobuf";
 option java_outer_classname = "AntidotePB";
 
-
-// Counter increment requenst
-message FpbIncrementReq {
+// Update request
+message FpbUpdateReq {
     required uint32 key = 1;
-    required uint32 amount = 2;
+    required uint32 operation = 2;
+    required bytes parameter = 3;
 }
 
-// Counter increment requenst
-message FpbDecrementReq {
+// Update request
+message FpbReadReq {
     required uint32 key = 1;
-    required uint32 amount = 2;
-}
-
-// Get counter request
-message FpbGetCounterReq {
-    required uint32 key = 1;
-}
-
-// Response operation
-message FpbGetCounterResp {
-    required sint32 value = 1;
-}
-
-// Response operation
-message FpbOperationResp {
-    required bool success = 1;
-}
-
-// Set updates request
-message FpbSetUpdateReq {
-    required uint32 key = 1;
-    repeated bytes adds = 2;
-    repeated bytes rems = 3;
-}
-
-// Get set request
-message FpbGetSetReq {
-    required uint32 key = 1;
-}
-
-
-// Get set response
-message FpbGetSetResp {
-    required bytes value = 1;
-}
-
-
-//Operation possible inside atomic update transaction
-message FpbAtomicUpdateTxnOp {
-	optional FpbIncrementReq counterinc = 1;
-	optional FpbDecrementReq counterdec = 2;	
-	optional FpbSetUpdateReq setupdate = 3;
-}
-
-
-//Atomic update transaction
-//@todo: Encode clock
-message FpbAtomicUpdateTxnReq {
-	optional bytes clock = 1;
-	repeated FpbAtomicUpdateTxnOp ops = 2;
-}
-
-//Response for a transaction
-message FpbAtomicUpdateTxnResp {
-	required bool success = 1; 
-	//If transaction failed clock will be empty
-	optional bytes clock = 2;
 }
 
 //Operation possible inside atomic update transaction
 message FpbGeneralTxnOp {
-	optional FpbIncrementReq counterinc = 1;
-	optional FpbDecrementReq counterdec = 2;	
-	optional FpbSetUpdateReq setupdate = 3;
-	optional FpbGetCounterReq counter = 4;
-	optional FpbGetSetReq set = 5;	
+	optional FpbUpdateReq op1 = 1;
+	optional FpbReadReq op2 = 2;	
 }
 
 message FpbGeneralTxnList {
@@ -90,26 +30,15 @@ message FpbGeneralTxnReq {
 }
 
 //Operation possible inside atomic update transaction
-message FpbSnapshotReadTxnOp {
-	optional FpbGetCounterReq counter = 1;
-	optional FpbGetSetReq set = 2;	
-}
-
-//Snapshot Read transaction
-message FpbSnapshotReadTxnReq {
-	optional bytes clock = 1;
-	repeated FpbSnapshotReadTxnOp ops = 2;
+message FpbGeneralTxnResp {
+	required bool success = 1;
+	optional bytes clock = 2;
+	repeated FpbGeneralTxnRespValue results = 3;
 }
 
 //Response for a transaction
-message FpbSnapshotReadTxnRespValue {
+message FpbGeneralTxnRespValue {
 	required uint32 key = 1;
-	optional FpbGetCounterResp counter = 2;
-	optional FpbGetSetResp set = 3;
-}
-message FpbSnapshotReadTxnResp {
-	required bool success = 1;
-	optional bytes clock = 2;
-	repeated FpbSnapshotReadTxnRespValue results = 3;
+    required bytes value = 2;
 }
 

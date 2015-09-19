@@ -23,7 +23,7 @@ message FpbTxnResp {
 }
 
 //Response for a transaction
-message FpbRespValue {
+message FpbValue {
 	required uint32 key = 1;
     required bytes value = 2;
 }

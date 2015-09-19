@@ -5,9 +5,9 @@ option java_outer_classname = "AntidotePB";
 //Operation possible inside atomic update transaction
 message FpbTxnOp {
     required uint32 type = 1;
-    required uint32 key = 1;
-    optional uint32 operation = 2;
-    optional bytes parameter = 3;
+    required uint32 key = 2;
+    optional uint32 operation = 3;
+    optional bytes parameter = 4;
 }
 
 message FpbTxnReq {

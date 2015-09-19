@@ -22,7 +22,7 @@ message FpbGeneralTxnOp {
 
 message FpbGeneralTxnReq {
 	optional bytes clock = 1;
-    repeated FpbGeneralTxnOp op = 1;
+    repeated FpbGeneralTxnOp ops = 1;
 }
 
 //Operation possible inside atomic update transaction

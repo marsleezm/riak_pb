@@ -48,12 +48,10 @@
 81,DtFetchResp,riak_dt
 82,DtUpdateReq,riak_dt
 83,DtUpdateResp,riak_dt
-94,FpbUpdateReq,antidote
-95,FpbReadReq,antidote
-96,FpbGeneralTxnOp,antidote
-97,FpbGeneralTxnReq,antidote
-98,FpbGeneralTxnResp,antidote
-99,FpbGeneralTxnValueResp,antidote
+96,FpbTxnOp,antidote
+97,FpbTxnReq,antidote
+98,FpbTxnResp,antidote
+99,FpbRespValue,antidote
 253,RpbAuthReq,riak
 254,RpbAuthResp,riak
 255,RpbStartTls,riak

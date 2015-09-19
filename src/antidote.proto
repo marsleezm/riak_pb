@@ -2,38 +2,28 @@
 option java_package = "com.basho.riak.protobuf";
 option java_outer_classname = "AntidotePB";
 
-// Update request
-message FpbUpdateReq {
-    required uint32 key = 1;
-    required uint32 operation = 2;
-    required bytes parameter = 3;
-}
-
-// Update request
-message FpbReadReq {
-    required uint32 key = 1;
-}
-
 //Operation possible inside atomic update transaction
-message FpbGeneralTxnOp {
-	optional FpbUpdateReq op1 = 1;
-	optional FpbReadReq op2 = 2;	
+message FpbTxnOp {
+    required uint32 type = 1;
+    required uint32 key = 1;
+    optional uint32 operation = 2;
+    optional bytes parameter = 3;
 }
 
-message FpbGeneralTxnReq {
+message FpbTxnReq {
 	optional bytes clock = 1;
-    repeated FpbGeneralTxnOp ops = 2;
+    repeated FpbTxnOp ops = 2;
 }
 
 //Operation possible inside atomic update transaction
-message FpbGeneralTxnResp {
+message FpbTxnResp {
 	required bool success = 1;
 	optional bytes clock = 2;
-	repeated FpbGeneralTxnRespValue results = 3;
+	repeated FpbRespValue results = 3;
 }
 
 //Response for a transaction
-message FpbGeneralTxnRespValue {
+message FpbRespValue {
 	required uint32 key = 1;
     required bytes value = 2;
 }

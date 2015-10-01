@@ -7,17 +7,14 @@ message FpbStartTxnReq {
     optional bytes clock = 1;
 }
 
-message FpbStartTxnResp {
-    required FpbTxId txid = 1;
-}
-
 message FpbPrepTxnReq {
     required FpbTxId txid = 1;
-    optional repeated FpbTxnOp = 2;
+    optional repeated FpbTxnOp ops = 2;
 }
 
 message FpbPrepTxnResp {
     required boolean success = 1;
+    optional uint64 commit_time =2;
 }
 
 message FpbReadReq {

@@ -9,7 +9,7 @@ message FpbStartTxnReq {
 
 message FpbPrepTxnReq {
     required FpbTxId txid = 1;
-    optional repeated FpbTxnOp ops = 2;
+    repeated FpbTxnOp ops = 2;
 }
 
 message FpbPrepTxnResp {

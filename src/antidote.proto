@@ -4,7 +4,7 @@ option java_outer_classname = "AntidotePB";
 
 //Interactive transaction interface
 message FpbStartTxnReq {
-    optional bytes clock = 1;
+    optional uint64 clock = 1;
 }
 
 message FpbPrepTxnReq {

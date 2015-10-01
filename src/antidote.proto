@@ -9,16 +9,16 @@ message FpbStartTxnReq {
 
 message FpbPrepTxnReq {
     required FpbTxId txid = 1;
-    repeated FpbTxnOp ops = 2;
+    repeated FpbUpdate ops = 2;
 }
 
 message FpbPrepTxnResp {
-    required boolean success = 1;
-    optional uint64 commit_time =2;
+    required bool success = 1;
+    optional uint64 commit_time = 2;
 }
 
 message FpbReadReq {
-    required TxId txid = 1;
+    required FpbTxId txid = 1;
     required uint32 key = 2;
 }
 
@@ -55,6 +55,6 @@ message FpbValue {
 }
 
 message FpbTxId {
-    required uint64 snapshot;
-    required bytes pid;
+    required uint64 snapshot = 1;
+    required bytes pid = 2;
 }

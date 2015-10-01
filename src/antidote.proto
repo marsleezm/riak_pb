@@ -19,7 +19,7 @@ message FpbPrepTxnResp {
 
 message FpbReadReq {
     required TxId txid = 1;
-    required uint32 key = 1;
+    required uint32 key = 2;
 }
 
 message FpbUpdate {

@@ -48,8 +48,7 @@
 81,DtFetchResp,riak_dt
 82,DtUpdateReq,riak_dt
 83,DtUpdateResp,riak_dt
-89,FpbStartTxnReq,antidote
-90,FpbStartTxnResp,antidote
+90,FpbStartTxnReq,antidote
 91,FpbPrepTxnReq,antidote
 92,FpbPrepTxnResp,antidote
 93,FpbReadReq,antidote

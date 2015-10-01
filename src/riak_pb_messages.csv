@@ -48,6 +48,13 @@
 81,DtFetchResp,riak_dt
 82,DtUpdateReq,riak_dt
 83,DtUpdateResp,riak_dt
+89,FpbStartTxnReq,antidote
+90,FpbStartTxnResp,antidote
+91,FpbPrepTxnReq,antidote
+92,FpbPrepTxnResp,antidote
+93,FpbReadReq,antidote
+94,FpbUpdate,antidote
+95,FpbTxId,antidote
 96,FpbTxnOp,antidote
 97,FpbTxnReq,antidote
 98,FpbTxnResp,antidote

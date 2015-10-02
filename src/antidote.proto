@@ -24,8 +24,7 @@ message FpbReadReq {
 
 message FpbUpdate {
     required uint32 key = 1;
-    required uint32 op = 2;
-    required bytes param = 3;
+    required bytes value = 2;
 }
 
 //General transaction that contains all transaction code 

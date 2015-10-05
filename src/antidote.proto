@@ -19,11 +19,11 @@ message FpbPrepTxnResp {
 
 message FpbReadReq {
     required FpbTxId txid = 1;
-    required uint32 key = 2;
+    required bytes key = 2;
 }
 
 message FpbUpdate {
-    required uint32 key = 1;
+    required bytes key = 1;
     required bytes value = 2;
 }
 
@@ -49,8 +49,7 @@ message FpbTxnResp {
 
 //Response for a transaction
 message FpbValue {
-	required uint32 key = 1;
-    required bytes value = 2;
+    required bytes value = 1;
 }
 
 message FpbTxId {

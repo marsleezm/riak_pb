@@ -18,9 +18,9 @@ message FpbNodeUps {
 }
 
 message FpbPerNodeUp {
-    required uint32 nodeid = 1;
-    required uint32 partition_id = 2;
-    repeated FpbPerNodeUp ups = 3; 
+    required bytes node = 1;
+    required uint32 partition = 2;
+    repeated FpbUpdate ups = 3; 
 }
 
 message FpbPrepTxnResp {

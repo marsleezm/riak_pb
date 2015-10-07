@@ -35,6 +35,7 @@ message FpbReadReq {
 }
 
 message FpbPartListReq {
+    optional bool noop = 1;
 }
 
 message FpbPartList {

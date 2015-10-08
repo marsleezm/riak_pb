@@ -38,6 +38,12 @@ message FpbPartListReq {
     optional bool noop = 1;
 }
 
+message FpbSingleUpReq {
+    required bytes key = 1;
+    required bytes value = 2;
+    required uint32 partition_id = 3;
+}
+
 message FpbPartList {
     repeated FpbNodePart node_parts = 1;
 }

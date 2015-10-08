@@ -63,6 +63,7 @@
 97,FpbTxnReq,antidote
 98,FpbTxnResp,antidote
 99,FpbValue,antidote
+100,FpbSingleUpReq,antidote
 253,RpbAuthReq,riak
 254,RpbAuthResp,riak
 255,RpbStartTls,riak

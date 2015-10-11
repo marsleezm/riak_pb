@@ -29,7 +29,7 @@ message FpbPrepTxnResp {
 }
 
 message FpbReadReq {
-    required FpbTxId txid = 1;
+    optional FpbTxId txid = 1;
     required bytes key = 2;
     required uint32 partition_id = 3;
 }

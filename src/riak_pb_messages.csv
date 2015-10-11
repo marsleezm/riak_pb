@@ -64,6 +64,16 @@
 98,FpbTxnResp,antidote
 99,FpbValue,antidote
 100,FpbSingleUpReq,antidote
+101,TpccCustomer,antidote
+102,TpccCustomerLookup,antidote
+103,TpccDistrict,antidote
+104,TpccHistory,antidote
+105,TpccItem,antidote
+106,TpccNewOrder,antidote
+107,TpccOrder,antidote
+108,TpccOrderLine,antidote
+109,TpccStock,antidote
+110,TpccWarehouse,antidote
 253,RpbAuthReq,riak
 254,RpbAuthResp,riak
 255,RpbStartTls,riak

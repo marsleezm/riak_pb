@@ -125,7 +125,7 @@ message TpccCustomerLookup {
    required uint64 c_w_id = 1;
    required uint64 c_d_id = 2;
    required bytes c_last = 3;
-   required List<Long> ids = 4;
+   repeated int64 ids = 4;
 }
 
 message TpccDistrict {

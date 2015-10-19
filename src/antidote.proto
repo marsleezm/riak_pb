@@ -162,16 +162,12 @@ message TpccOrder {
 }
 
 message TpccOrderLine {
-   required uint64 ol_o_id  =  1;
-   required uint64 ol_d_id  =  2;
-   required uint64 ol_w_id  =  3;
-   required uint64 ol_number  =  4;
-   required uint64 ol_i_id  =  5;
-   required uint64 ol_supply_w_id  =  6;
-   required uint64 ol_delivery_d  =  7;
-   required uint64 ol_quantity  =  8;
-   required double ol_amount  =  9;
-   required bytes ol_dist_info  = 10;
+   required uint64 ol_i_id  =  1;
+   required uint64 ol_supply_w_id  =  2;
+   required uint64 ol_delivery_d  =  3;
+   required uint64 ol_quantity  =  4;
+   required double ol_amount  =  5;
+   required bytes ol_dist_info  = 6;
 }
 
 message TpccStock {

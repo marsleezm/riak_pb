@@ -11,6 +11,7 @@ message FpbPrepTxnReq {
     required FpbTxId txid = 1;
     optional FpbNodeUps local_updates = 2;
     optional FpbNodeUps remote_updates = 3;
+    required uint32 threadid = 4;
 }
 
 message FpbNodeUps {

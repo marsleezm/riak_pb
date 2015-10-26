@@ -19,7 +19,7 @@ message FpbNodeUps {
 }
 
 message FpbPerNodeUp {
-    required string node = 1;
+    required uint32 node_id = 1;
     required uint32 partition_id = 2;
     repeated FpbUpdate ups = 3; 
 }

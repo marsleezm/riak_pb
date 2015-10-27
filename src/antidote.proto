@@ -1,6 +1,7 @@
 // Java package specifiers
 option java_package = "com.basho.riak.protobuf";
 option java_outer_classname = "AntidotePB";
+option optimize_for = SPEED;
 
 //Interactive transaction int32erface
 message FpbStartTxnReq {
@@ -85,20 +86,10 @@ message FpbTxId {
 }
 
 message FpbValue{
-    required uint32 field = 1 [ default=12 ];
-    optional TpccCustomer customer = 2;
-    optional TpccCustomerLookup clookup = 3;
-    optional TpccDistrict district = 4;
-    optional TpccHistory history = 5;
-    optional TpccItem item = 6;
-    optional TpccNewOrder neworder = 7;
-    optional TpccOrder order = 8;
-    optional TpccOrderLine orderline = 9;
-    optional TpccStock stock = 10;
-    optional TpccWarehouse warehouse = 11; 
-    optional string str_value = 12;
-    optional int64 long_value = 13;
-    optional double double_value = 14;
+    required uint32 field = 1;
+    repeated string str_value = 2;
+    repeated int64 long_value = 3;
+    repeated double double_value = 4;
 }
 
 message TpccCustomer{

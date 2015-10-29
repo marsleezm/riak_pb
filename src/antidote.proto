@@ -47,11 +47,17 @@ message FpbSingleUpReq {
 
 message FpbPartList {
     repeated FpbNodePart node_parts = 1;
+    repeated FpbReplList repl_list = 2;
 }
 
 message FpbNodePart {
     required string ip = 1;
     required uint32 num_partitions = 2 ;
+}
+
+message FpbReplList {
+    required string ip = 1;
+    repeated string to_repls = 2 ;
 }
 
 message FpbUpdate {

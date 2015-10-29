@@ -48,6 +48,7 @@
 81,DtFetchResp,riak_dt
 82,DtUpdateReq,riak_dt
 83,DtUpdateResp,riak_dt
+84,FpbReplList,antidote
 85,FpbPartListReq,antidote
 86,FpbNodeUps,antidote
 87,FpbPerNodeUp,antidote

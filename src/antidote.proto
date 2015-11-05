@@ -32,8 +32,9 @@ message FpbPrepTxnResp {
 message FpbReadReq {
     optional FpbTxId txid = 1;
     required string key = 2;
-    optional uint32 partition_id = 3;
-    optional string replica_ip = 4;
+    optional uint32 node_id = 3;
+    optional uint32 partition_id = 4;
+    optional string replica_ip = 5;
 }
 
 message FpbPartListReq {

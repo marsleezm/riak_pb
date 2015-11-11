@@ -35,6 +35,7 @@ message FpbReadReq {
     optional uint32 node_id = 3;
     optional uint32 partition_id = 4;
     optional string replica_ip = 5;
+    optional uint32 threadid=6;
 }
 
 message FpbPartListReq {
